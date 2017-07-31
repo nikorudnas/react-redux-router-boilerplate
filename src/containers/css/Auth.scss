@@ -1,4 +1,21 @@
 .Auth {
-    flex: 1;
+    display: flex;
     text-align: center;
+}
+
+.Title {
+    text-align: center;
+}
+
+#Register {
+    flex: 1;
+}
+#Login {
+    flex: 1;
+}
+#Normal_Query {
+    flex: 1;
+}
+#Auth_Query {
+    flex: 1;
 }
