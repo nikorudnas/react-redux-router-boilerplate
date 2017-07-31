@@ -1,0 +1,5 @@
+{
+    "app.greeting": "Tervetuloa React sovellukseen!",
+    "app.info": "Päästäksesi alkuun, muuta 'src/containers/Main.js' ja tallenna ladataksesi uudelleen.",
+    "app.languageButton": "Klikkaa mua"
+}

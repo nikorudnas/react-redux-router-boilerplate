@@ -1,3 +1,4 @@
+// @flow
 export default function reducer(state = {
     title: null
 }, action) {

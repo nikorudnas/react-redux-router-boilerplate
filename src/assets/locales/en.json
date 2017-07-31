@@ -1,0 +1,5 @@
+{
+    "app.greeting": "Welcome to React app!",
+    "app.info": "To get started, edit 'src/containers/Main.js' and save to reload.",
+    "app.languageButton": "Click me"
+}

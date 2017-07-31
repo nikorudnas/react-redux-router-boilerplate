@@ -1,6 +1,8 @@
+// @flow
 import React, { Component } from 'react';
 import './css/Auth.scss';
 import NavBar from '../components/NavBar';
+import '../assets/constants.js';
 
 class Auth extends Component {
     render() {
