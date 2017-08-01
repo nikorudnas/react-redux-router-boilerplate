@@ -21,10 +21,13 @@ export function loginUser(credentials) {
             if (responseJson.success) {
                 // Add token to local storage
                 localStorage.setItem('token', responseJson.token);
-
                 dispatch(loginRequestSuccess());
+                return true;
+
             } else if (!responseJson.success) {
                 dispatch(loginRequestError(responseJson));
+                return false;
+                
             }
         }).catch((error) => {
             dispatch(loginRequestError({
@@ -59,7 +62,6 @@ export function logoutUser() {
 
         // Remove token from storage
         localStorage.removeItem('token');
-
         dispatch(logout());
     }
 }

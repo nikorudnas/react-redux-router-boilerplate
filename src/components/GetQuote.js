@@ -12,7 +12,11 @@ class GetQuote extends Component {
 
     getQuote = (e) => {
         e.preventDefault();
-        this.props.getQuote();
+        this.props.getQuote().then((quote) => {
+            if (quote) {
+                alert(quote);
+            }
+        });
     }
 
     render() {

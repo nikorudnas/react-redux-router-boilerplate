@@ -1,3 +1,6 @@
+const ip = require('ip');
+const ipAddr = ip.address();
+
 module.exports = {
-    SERVER_URL: 'http://192.168.178.108:3001'
+    SERVER_URL: "http://" + ipAddr + ":3001"
 };

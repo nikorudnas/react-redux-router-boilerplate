@@ -16,8 +16,12 @@ export function getQuote() {
             // Quote successful
             if (responseJson.success) {
                 dispatch(quoteRequestSuccess(responseJson));
+                return responseJson.quote;
+
             } else if (!responseJson.success) {
                 dispatch(quoteRequestError(responseJson));
+                return false;
+                
             }
         }).catch((error) => {
             dispatch(quoteRequestError({

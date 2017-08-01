@@ -17,11 +17,16 @@ class LoginForm extends Component {
             'username': this.refs.username.getValue(),
             'password': this.refs.password.getValue()
         };
-        this.props.loginUser(creds);
+        this.props.loginUser(creds).then((passed) => {
+            if (passed) {
+                alert("You are now logged in!");
+            }
+        });
     }
 
     logOut = () => {
         this.props.logoutUser();
+        alert("You are now logged out!");
     };
 
     render() {
@@ -53,7 +58,7 @@ class LoginForm extends Component {
                         style={{ marginTop: '20px' }}
                         secondary={true}
                         label="Logout"
-                        disabled={this.props.auth.isFetching} 
+                        disabled={this.props.auth.isFetching}
                         onTouchTap={this.logOut} />
                     <br />
                     <br /> {Spinner}

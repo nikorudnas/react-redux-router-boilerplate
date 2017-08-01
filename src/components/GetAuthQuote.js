@@ -13,7 +13,11 @@ class GetAuthQuote extends Component {
     getAuthQuote = (e) => {
         e.preventDefault();
         if (localStorage.getItem('token')) {
-            this.props.getAuthQuote(localStorage.getItem('token'));
+            this.props.getAuthQuote(localStorage.getItem('token')).then((authquote) => {
+                if (authquote) {
+                    alert(authquote);
+                }
+            });
         }
         else {
             alert("Please log in first!");

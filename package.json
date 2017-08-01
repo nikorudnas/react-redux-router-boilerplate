@@ -27,6 +27,7 @@
     "flow-bin": "^0.51.1",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "ip": "^1.1.5",
     "jest": "20.0.4",
     "material-ui": "^0.18.7",
     "moment": "^2.18.1",

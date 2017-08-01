@@ -17,7 +17,11 @@ class RegisterForm extends Component {
             'username': this.refs.username.getValue(),
             'password': this.refs.password.getValue()
         };
-        this.props.registerUser(creds);
+        this.props.registerUser(creds).then((passed) => {
+            if (passed) {
+                alert("Register successful! You can now log in :)");
+            }
+        });;
     }
 
     render() {

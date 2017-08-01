@@ -19,14 +19,15 @@ export function registerUser(credentials) {
         }).then(response => response.json()).then((responseJson) => {
             // Register successful
             if (responseJson.success) {
-                // Add token to local storage
-
-                // Lets not do this automatically here
+                // You can automatically log in after register complete
                 //localStorage.setItem('token', responseJson.token);
-
                 dispatch(registerRequestSuccess());
+                return true;
+
             } else if (!responseJson.success) {
                 dispatch(registerRequestError(responseJson));
+                return false;
+
             }
         }).catch((error) => {
             dispatch(registerRequestError({

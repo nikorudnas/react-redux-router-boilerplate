@@ -17,8 +17,12 @@ export function getAuthQuote(token) {
             // Auth quote successful
             if (responseJson.success) {
                 dispatch(authquoteRequestSuccess(responseJson));
+                return responseJson.authquote;
+                
             } else if (!responseJson.success) {
                 dispatch(authquoteRequestError(responseJson));
+                return false;
+
             }
         }).catch((error) => {
             dispatch(authquoteRequestError({
