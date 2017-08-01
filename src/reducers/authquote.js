@@ -3,48 +3,35 @@ export default function reducer(state = {
     isFetching: false,
     fetched: false,
     message: null,
-    isAuthenticated: localStorage.getItem('token') ? true : false,
-    user: null
+    authquote: null
 }, action) {
     switch (action.type) {
-        case "LOGIN_REQUEST":
+        case "AUTHQUOTE_REQUEST":
             {
                 return {
                     ...state,
                     isFetching: true,
                     fetched: false,
-                    message: null,
-                    isAuthenticated: false
+                    message: null
                 }
             }
-        case "LOGIN_REQUEST_FAILURE":
+        case "AUTHQUOTE_REQUEST_FAILURE":
             {
                 return {
                     ...state,
                     isFetching: false,
                     fetched: false,
-                    message: action.payload,
-                    isAuthenticated: false
+                    message: action.payload
                 }
             }
-        case "LOGIN_REQUEST_SUCCESS":
+        case "AUTHQUOTE_REQUEST_SUCCESS":
             {
                 return {
                     ...state,
                     isFetching: false,
                     fetched: true,
                     message: null,
-                    isAuthenticated: true
-                }
-            }
-        case "LOGOUT":
-            {
-                return {
-                    ...state,
-                    isFetching: false,
-                    fetched: true,
-                    message: null,
-                    isAuthenticated: false
+                    authquote: action.payload
                 }
             }
         default:

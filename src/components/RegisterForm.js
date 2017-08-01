@@ -10,8 +10,18 @@ const Error_Style = {
 };
 
 class RegisterForm extends Component {
+
+    handleRegister = (e) => {
+        e.preventDefault();
+        let creds = {
+            'username': this.refs.username.getValue(),
+            'password': this.refs.password.getValue()
+        };
+        this.props.registerUser(creds);
+    }
+
     render() {
-        const Spinner = this.props.auth.isFetching
+        const Spinner = this.props.register.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;
         return (
@@ -32,12 +42,12 @@ class RegisterForm extends Component {
                         style={{ marginTop: '20px' }}
                         primary={true}
                         label="Register"
-                        disabled={this.props.auth.isFetching}
+                        disabled={this.props.register.isFetching}
                         type="submit" />
                     <br />
                     <br /> {Spinner}
                     <br />
-                    <span style={Error_Style}>{this.props.auth.message}</span>
+                    <span style={Error_Style}>{this.props.register.message}</span>
                 </form>
             </div>
         );

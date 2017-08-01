@@ -9,8 +9,14 @@ const Error_Style = {
 };
 
 class GetQuote extends Component {
+
+    getQuote = (e) => {
+        e.preventDefault();
+        this.props.getQuote();
+    }
+
     render() {
-        const Spinner = this.props.auth.isFetching
+        const Spinner = this.props.quote.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;
         return (
@@ -20,12 +26,12 @@ class GetQuote extends Component {
                         style={{ marginTop: '20px' }}
                         secondary={true}
                         label="Get Quote"
-                        disabled={this.props.auth.isFetching}
+                        disabled={this.props.quote.isFetching}
                         type="submit" />
                     <br />
                     <br /> {Spinner}
                     <br />
-                    <span style={Error_Style}>{this.props.auth.message}</span>
+                    <span style={Error_Style}>{this.props.quote.message}</span>
                 </form>
             </div>
         );

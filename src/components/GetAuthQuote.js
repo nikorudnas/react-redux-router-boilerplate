@@ -9,8 +9,19 @@ const Error_Style = {
 };
 
 class GetAuthQuote extends Component {
+
+    getAuthQuote = (e) => {
+        e.preventDefault();
+        if (localStorage.getItem('token')) {
+            this.props.getAuthQuote(localStorage.getItem('token'));
+        }
+        else {
+            alert("Please log in first!");
+        }
+    }
+
     render() {
-        const Spinner = this.props.auth.isFetching
+        const Spinner = this.props.authquote.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;
         return (
@@ -20,12 +31,12 @@ class GetAuthQuote extends Component {
                         style={{ marginTop: '20px' }}
                         secondary={true}
                         label="Get Auth Quote"
-                        disabled={this.props.auth.isFetching}
+                        disabled={this.props.authquote.isFetching}
                         type="submit" />
                     <br />
                     <br /> {Spinner}
                     <br />
-                    <span style={Error_Style}>{this.props.auth.message}</span>
+                    <span style={Error_Style}>{this.props.authquote.message}</span>
                 </form>
             </div>
         );

@@ -1,5 +1,6 @@
 .Auth {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -7,15 +8,7 @@
     text-align: center;
 }
 
-#Register {
+.items {
     flex: 1;
-}
-#Login {
-    flex: 1;
-}
-#Normal_Query {
-    flex: 1;
-}
-#Auth_Query {
-    flex: 1;
+    min-width: 300px;
 }

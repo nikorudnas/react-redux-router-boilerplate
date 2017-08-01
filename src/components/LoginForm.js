@@ -10,6 +10,20 @@ const Error_Style = {
 };
 
 class LoginForm extends Component {
+
+    handleLogin = (e) => {
+        e.preventDefault();
+        let creds = {
+            'username': this.refs.username.getValue(),
+            'password': this.refs.password.getValue()
+        };
+        this.props.loginUser(creds);
+    }
+
+    logOut = () => {
+        this.props.logoutUser();
+    };
+
     render() {
         const Spinner = this.props.auth.isFetching
             ? <CircularProgress size={60} thickness={7} />
@@ -34,6 +48,13 @@ class LoginForm extends Component {
                         label="Login"
                         disabled={this.props.auth.isFetching}
                         type="submit" />
+                    <br />
+                    <RaisedButton
+                        style={{ marginTop: '20px' }}
+                        secondary={true}
+                        label="Logout"
+                        disabled={this.props.auth.isFetching} 
+                        onTouchTap={this.logOut} />
                     <br />
                     <br /> {Spinner}
                     <br />

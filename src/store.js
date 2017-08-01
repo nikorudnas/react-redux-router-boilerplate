@@ -3,7 +3,10 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import { intlReducer } from 'react-intl-redux';
+import register from './reducers/register';
 import auth from './reducers/auth';
+import quote from './reducers/quote';
+import authquote from './reducers/authquote';
 
 /* localisation */
 import en from './assets/locales/en.json';
@@ -23,7 +26,10 @@ const initialIntlState = {
 };
 
 const reducer = combineReducers({
+  register,
   auth,
+  quote,
+  authquote,
   intl: intlReducer,
 });
 
