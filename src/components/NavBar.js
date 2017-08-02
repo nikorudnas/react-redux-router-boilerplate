@@ -4,6 +4,7 @@ import './css/NavBar.scss';
 
 // Material ui
 import Accessibility from 'material-ui/svg-icons/action/accessibility';
+import FileUpload from 'material-ui/svg-icons/file/file-upload';
 import { grey200, grey700 } from 'material-ui/styles/colors';
 
 const toolbarStyle = {
@@ -44,6 +45,13 @@ class NavBar extends Component {
                         style={toolbartitleStyle}
                         text="Auth"
                         onTouchTap={() => this.props.history.push('/auth')} />
+                    <FileUpload
+                        style={iconStyle}
+                        onTouchTap={() => this.props.history.push('/upload')} />
+                    <ToolbarTitle
+                        style={toolbartitleStyle}
+                        text="Upload"
+                        onTouchTap={() => this.props.history.push('/upload')} />
                 </ToolbarGroup>
             </Toolbar>
         );

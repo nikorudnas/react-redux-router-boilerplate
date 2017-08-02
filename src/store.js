@@ -7,6 +7,7 @@ import register from './reducers/register';
 import auth from './reducers/auth';
 import quote from './reducers/quote';
 import authquote from './reducers/authquote';
+import upload from './reducers/upload';
 
 /* localisation */
 import en from './assets/locales/en.json';
@@ -30,6 +31,7 @@ const reducer = combineReducers({
   auth,
   quote,
   authquote,
+  upload,
   intl: intlReducer,
 });
 

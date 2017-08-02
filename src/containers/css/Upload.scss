@@ -1,0 +1,14 @@
+.Upload {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.Title {
+    text-align: center;
+}
+
+.items {
+    flex: 1;
+    min-width: 300px;
+}
