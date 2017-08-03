@@ -5,7 +5,7 @@ import constants from '../assets/constants.js';
 export function loginUser(credentials) {
     return dispatch => {
         dispatch(loginRequest());
-
+        // Return a promise with the fetch api
         return fetch(constants.SERVER_URL + '/api/login', {
             method: 'POST',
             headers: {
@@ -27,7 +27,7 @@ export function loginUser(credentials) {
             } else if (!responseJson.success) {
                 dispatch(loginRequestError(responseJson));
                 return false;
-                
+
             }
         }).catch((error) => {
             dispatch(loginRequestError({
@@ -59,7 +59,6 @@ function loginRequestSuccess() {
 // Logout
 export function logoutUser() {
     return dispatch => {
-
         // Remove token from storage
         localStorage.removeItem('token');
         dispatch(logout());

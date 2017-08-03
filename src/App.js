@@ -5,6 +5,7 @@ import { IntlProvider } from 'react-intl';
 
 class App extends Component {
   render() {
+    /* Wrap react-intl around routes */
     return (
       <IntlProvider>
         <div className="Container">

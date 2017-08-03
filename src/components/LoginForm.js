@@ -11,6 +11,7 @@ const Error_Style = {
 
 class LoginForm extends Component {
 
+    /* Get creds from the form and pass them as params to action */
     handleLogin = (e) => {
         e.preventDefault();
         let creds = {
@@ -30,6 +31,7 @@ class LoginForm extends Component {
     };
 
     render() {
+        /* Render spinner only when 'isFetching' is true */
         const Spinner = this.props.auth.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;

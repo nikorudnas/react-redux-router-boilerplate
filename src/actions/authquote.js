@@ -5,7 +5,8 @@ import constants from '../assets/constants.js';
 export function getAuthQuote(token) {
     return dispatch => {
         dispatch(authquoteRequest());
-
+        // Return a promise with the fetch api
+        // Remember here to pass the token with header since this is auth route
         return fetch(constants.SERVER_URL + '/api/authquote', {
             method: 'GET',
             headers: {
@@ -17,8 +18,9 @@ export function getAuthQuote(token) {
             // Auth quote successful
             if (responseJson.success) {
                 dispatch(authquoteRequestSuccess(responseJson));
+                // Return quote to the caller
                 return responseJson.authquote;
-                
+
             } else if (!responseJson.success) {
                 dispatch(authquoteRequestError(responseJson));
                 return false;

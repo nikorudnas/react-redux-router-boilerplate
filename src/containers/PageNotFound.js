@@ -5,6 +5,7 @@ import './css/PageNotFound.scss';
 class PageNotFound extends Component {
 
     componentDidMount() {
+        /* After 1.5s redirect back to root path */
         setInterval(() => {
             this.props.history.push('/');
         }, 1500);

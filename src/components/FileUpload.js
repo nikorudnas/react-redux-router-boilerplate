@@ -11,7 +11,9 @@ const Error_Style = {
 class FileUpload extends Component {
 
     uploadImage = (e) => {
+        /* Get file from input */
         let file = document.getElementById("uploadFile").files[0];
+        /* If a file was found, call function from prop with file as param */
         if (file) {
             this.props.uploadDocumentRequest(file).then((url) => {
                 if (url) {
@@ -24,6 +26,7 @@ class FileUpload extends Component {
     }
 
     render() {
+        /* Render spinner only when 'isFetching' is true */
         const Spinner = this.props.upload.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;

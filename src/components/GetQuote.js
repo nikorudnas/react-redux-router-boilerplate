@@ -12,6 +12,7 @@ class GetQuote extends Component {
 
     getQuote = (e) => {
         e.preventDefault();
+        /* Get a quote */
         this.props.getQuote().then((quote) => {
             if (quote) {
                 alert(quote);
@@ -20,6 +21,7 @@ class GetQuote extends Component {
     }
 
     render() {
+        /* Render spinner only when 'isFetching' is true */
         const Spinner = this.props.quote.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;

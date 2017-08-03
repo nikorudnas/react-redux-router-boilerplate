@@ -5,7 +5,7 @@ import constants from '../assets/constants.js';
 export function registerUser(credentials) {
     return dispatch => {
         dispatch(registerRequest());
-
+        // Return a promise with the fetch api
         return fetch(constants.SERVER_URL + '/api/register', {
             method: 'POST',
             headers: {

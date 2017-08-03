@@ -11,6 +11,7 @@ const Error_Style = {
 
 class RegisterForm extends Component {
 
+    /* Get creds from the form and pass them as params to action */
     handleRegister = (e) => {
         e.preventDefault();
         let creds = {
@@ -25,6 +26,7 @@ class RegisterForm extends Component {
     }
 
     render() {
+        /* Render spinner only when 'isFetching' is true */
         const Spinner = this.props.register.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;

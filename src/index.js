@@ -6,6 +6,7 @@ import store from './store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+/* Apply normalize on all pages */
 import 'normalize.css';
 
 // Material-UI
@@ -14,6 +15,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 ReactDOM.render(
+    /* Wrap Material-ui provider as parent */
     <MuiThemeProvider>
         <Provider store={store}>
             <Router>

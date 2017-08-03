@@ -12,6 +12,7 @@ class GetAuthQuote extends Component {
 
     getAuthQuote = (e) => {
         e.preventDefault();
+        /* If token was found, call function from prop with token as param */
         if (localStorage.getItem('token')) {
             this.props.getAuthQuote(localStorage.getItem('token')).then((authquote) => {
                 if (authquote) {
@@ -25,6 +26,7 @@ class GetAuthQuote extends Component {
     }
 
     render() {
+        /* Render spinner only when 'isFetching' is true */
         const Spinner = this.props.authquote.isFetching
             ? <CircularProgress size={60} thickness={7} />
             : null;

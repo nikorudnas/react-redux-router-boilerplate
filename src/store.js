@@ -26,6 +26,7 @@ const initialIntlState = {
   }
 };
 
+/* Combine all reducers with intl */
 const reducer = combineReducers({
   register,
   auth,
@@ -37,4 +38,5 @@ const reducer = combineReducers({
 
 const middleware = applyMiddleware(thunk, createLogger());
 
+/* Create store */
 export default createStore(reducer, initialIntlState, middleware);

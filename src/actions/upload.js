@@ -5,6 +5,8 @@ import constants from '../assets/constants.js';
 export function uploadDocumentRequest(file) {
     let data = new FormData();
     data.append('file', file);
+    // Return a promise with the fetch api
+    // The file goes in body and token in header
     return dispatch => {
         dispatch(uploadFileRequest(data));
         return fetch(constants.SERVER_URL + '/api/upload', {
@@ -17,6 +19,8 @@ export function uploadDocumentRequest(file) {
             // Upload successful
             if (responseJson.success) {
                 dispatch(uploadFileRequestSuccess(responseJson.url));
+                // The image comes with the response as Base-64 encrypted data.
+                // But it's ok we can directly set it to the img src attribute
                 dispatch(setImage(responseJson.image));
                 return true;
 
